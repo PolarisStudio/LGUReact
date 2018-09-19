@@ -2,12 +2,12 @@
 A web front-end and React course, by Polaris Studio.
 
 ## Introduction
-This course is a practice-based HTML & React Course. 
-Every student should be in a group, and do group work together. 
+This course is a practice-based HTML & React Course. <br>
+Every student should be in a group, and do group work together.<br>
 The best performed studetns will have a chance to get into Polaris Studio, CUHKSZ.
 
 ## Course Detail
-Lecture Time: 3:00-4:30pm, every Saturday (2:30-4:30pm the first week, with extra half an hour to introduce ourselves.)
+Lecture Time: 3:00-4:30pm, every Saturday (2:30-4:30pm the first week, with extra half an hour to introduce ourselves.)<br>
 Lecture Location: TD113
 
 ## Course Outline
