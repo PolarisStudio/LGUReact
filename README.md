@@ -17,8 +17,8 @@ Lecture Location: TD113
 4. JavaScript Level 2
 5. DOM and JavaScript Level 3
 6. Introduction to React
-7-10. React courses
-11. Conclusion and future arrangements.
+7. React courses (4 ~ 5lectures)
+8. Conclusion and future arrangements.
 
 ## Reference websites/books
 1. Head First HTML & CSS
