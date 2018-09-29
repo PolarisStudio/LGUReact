@@ -1,0 +1,23 @@
+#page{
+    width:70vw;
+    background-color: wheat;
+    margin: 0 7.5vw ;
+    padding: 3vw 5vw;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    box-shadow:3px 3px 5px rgba(0,0,0,0.3);
+}
+
+.basicInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+p{
+    font-weight: 900;
+    font-size: 1.2em;
+}
+
+#practice{
+    font-size: 1rem;
+}

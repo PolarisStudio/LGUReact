@@ -1,0 +1,20 @@
+/* h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+} */
+
+#head1{
+    color:blue;
+}
+
+
+#head2{
+    color:red;
+}
+
+.head{
+    font-style: italic;
+}
+p.head{
+    color: purple;
+    font-size: 2rem;
+}
