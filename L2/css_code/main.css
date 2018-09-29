@@ -1,0 +1,34 @@
+.rotation{
+    width: fit-content;
+    transition: transform  ease 1s;
+
+}
+
+.rotation:hover{
+    transform: rotateZ(180deg);
+}
+
+.dropdown{
+    font-size: 12pt;
+    max-height: 2rem;
+    width: fit-content;
+    padding: .5rem;
+    overflow: hidden;
+    transition: max-height ease 1s;
+    border: red 1px solid;
+}
+
+.dropdown text{
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 600;
+}
+.dropdown:hover{
+    max-height: 100vh;
+}
+
+.title:hover span:after{
+    content: "#";
+    font-size: 1.5rem;
+    color: blue;
+}
