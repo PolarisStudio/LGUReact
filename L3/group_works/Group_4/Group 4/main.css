@@ -1,0 +1,31 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-item-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-item-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flex-item-rowreverse{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.round_icon{
+    width: 34px;
+    height: 34px;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.7)
+}
