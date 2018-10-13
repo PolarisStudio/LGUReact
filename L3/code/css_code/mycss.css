@@ -2,3 +2,8 @@
     position: fixed;
     top: 20vh;
 }
+
+html, div{
+    font-family: 'Ubuntu', sans-serif;
+
+}
