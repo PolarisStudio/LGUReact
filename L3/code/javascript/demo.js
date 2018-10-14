@@ -25,7 +25,7 @@ var max;
 //     console.log(i)
 // }
 
-//for-2
+// for-2
 // for (var i=1; ;){
 //     console.log(i)
 //     i += 1;
@@ -40,7 +40,7 @@ var max;
 //     console.log(i)
 // }
 
-// for demo
+// for-4
 // var student = {
 //     id: 10000,
 //     name: "David"
@@ -62,16 +62,16 @@ var max;
 
 
 // If we use function
-// var nums=[2,1,5,10, 100, 1];
+var nums=[2,1,5,10, 100, 1];
 
-// var Max = function(nums_list){
-//     var max = 0;
-//     for (var num of nums_list){
-//         if (max<num){
-//             max = num
-//         }
-//     }
-//     return max
-// }
-// console.log(Max(nums))
+var Max = function(nums_list){
+    var max = 0;
+    for (var num of nums_list){
+        if (max<num){
+            max = num
+        }
+    }
+    return max
+}
+console.log(Max(nums));
 
