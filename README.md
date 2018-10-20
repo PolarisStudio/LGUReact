@@ -14,11 +14,10 @@ Lecture Location: TD113
 1. Introduction to HTML5, Basic HTML5 and styling skills.
 2. CSS3 and basic UI design.
 3. CDN, including libraries such as Bootstrap, JavaScript Level 1
-4. JavaScript Level 2
-5. DOM and JavaScript Level 3
-6. Introduction to React
-7. React courses (4 ~ 5lectures)
-8. Conclusion and future arrangements.
+4. DOM and JavaScript Level 2
+5. Introduction to React
+6. React courses (4 ~ 5lectures)
+7. Conclusion and future arrangements.
 
 ## Reference websites/books
 1. Head First HTML & CSS
