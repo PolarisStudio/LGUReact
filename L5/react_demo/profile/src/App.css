@@ -30,3 +30,48 @@
     transform: rotate(360deg);
   }
 }
+
+
+.header {
+  height: 65.8vh;
+  width: 100%;
+  background-color: rgb(33, 5, 160);
+  border-radius: 0 0 20% 20%;
+  transform: translateY(-5vh);
+  transition: transform ease .5s;
+  position: absolute;
+}
+
+.header:hover{
+  transform: none;
+}
+
+
+.portrait{
+  width: 100vw;
+  height: 15vw;
+  bottom: -7.5vw;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+
+.portrait-img{
+  border-radius: 15vw;
+  width: 15vw;
+  height: 15vw;
+  transition: all .5s ease;
+  border-color: white;
+  border-style: solid;
+  border-width:1vw;
+}
+
+.header:hover .portrait-img{
+  width: 20vw;
+  height: 20vw;
+  border-width: .5vw;
+}
+
