@@ -32,6 +32,27 @@
 }
 
 
+
+@font-face {
+  font-family: 'iconfont';  /* project id 902588 */
+  src: url('//at.alicdn.com/t/font_902588_jrirhq16ey.eot');
+  src: url('//at.alicdn.com/t/font_902588_jrirhq16ey.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_902588_jrirhq16ey.woff') format('woff'),
+  url('//at.alicdn.com/t/font_902588_jrirhq16ey.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_902588_jrirhq16ey.svg#iconfont') format('svg');
+}
+
+
+
+
+hr{
+  width: 100%;
+}
+
+.em-strong{
+  font-size: 1.5rem;
+}
+
 .header {
   height: 65.8vh;
   width: 100%;
@@ -52,12 +73,16 @@
   height: 15vw;
   bottom: -7.5vw;
   position: absolute;
-  display: flex;
+  display: flex; 
   flex-direction: row;
   justify-content: center;
   align-content: center;
 }
 
+.portrait h1, h2, h3, h4, h5, h6, em{
+  width: 100%;
+  text-align: center;
+}
 
 .portrait-img{
   border-radius: 15vw;
@@ -75,3 +100,64 @@
   border-width: .5vw;
 }
 
+.container-col{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (max-width: 600px){
+  .container-col em{
+    font-size: 10px;
+  }
+}
+
+.Middle{
+  width:100%;
+  position: absolute;
+  top: 71vh;
+  height: 28vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Middle .container-col, a{
+  width: 36vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+}
+.Middle .container-col:first-child{
+  position: absolute;
+  left: 2vw;
+  
+}
+.Middle div:last-child{
+  position: absolute;
+  right: 2vw;
+}
+
+.Icon{
+  font-family: 'iconfont' !important;
+  font-size: 3rem;
+  text-align: center;
+  color: gray;
+  transition: all .5s ease;
+}
+
+.Icon:hover{
+  font-size: 3.5rem;
+  color: rgb(33, 5, 160);
+}
+
+.Icon+em{
+  color: gray;
+}
+
+.Icon:hover+em{
+  color: rgb(33, 5, 160);
+}
