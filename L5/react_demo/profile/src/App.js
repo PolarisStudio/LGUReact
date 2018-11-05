@@ -50,6 +50,37 @@ class Portrait extends Component {
   }
 }
 
+class FullPop extends Component{
+  constructor(props){
+    super(props);
+    console.log(props);
+    this.state = {
+      content: JSON.parse(props.content),
+      show: false
+    }
+
+  }
+
+  render(){
+    setTimeout(()=>{
+      this.setState({
+        show: true
+      })
+    })
+    return(
+      <div className={'full-pop ' + (this.state.show?'full-pop-show':'')}>
+        <div>
+          {this.state.content.title}
+        </div>
+        <hr></hr>
+        <p>
+          {this.state.content.long}
+        </p>
+      </div>
+    )
+  }
+}
+
 class ContainerHeader extends Component{
   constructor(props){
     super(props);
@@ -59,29 +90,39 @@ class ContainerHeader extends Component{
   }
   headerChangeFocus(newTitle){
     this.setState({
-      headerFocus: newTitle
+      headerFocus: newTitle==this.state.headerFocus?null:newTitle
     })
     console.log(this.headerFocus)
   }
   render(){
     return (
+        
       <div className="container-row full-height">
         {
           headerList.map((item)=>
           <div className={"container-col auto-height header-box " + (this.state.headerFocus===item.title?"header-box-focus":"")} key={item.title} onClick={()=>{this.headerChangeFocus(item.title)}}>
+            
+
             <div>
               {item.title}
             </div>
-            <hr></hr>
+            <hr className="header-box-hr"></hr>
             <div>
               {item.short}
             </div>
+            <div style={{position: 'relative'}}>
+            {this.state.headerFocus===item.title &&
+              <FullPop content={JSON.stringify(item)}></FullPop>
+            }
+
+            </div>
           </div>
+          
+
           )
         }
+        </div>
         
-        
-      </div>
     )
   }
 }

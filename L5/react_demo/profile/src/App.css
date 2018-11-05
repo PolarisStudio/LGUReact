@@ -127,7 +127,7 @@ hr{
   margin-top: 10%;
 }
 
-.header-box hr{
+.header-box .header-box-hr{
   width: 80%;
   color: gray;
   background-color: gray;
@@ -136,7 +136,7 @@ hr{
 }
 
 
-.header:hover  .header-box, .header:hover hr{
+.header:hover  .header-box, .header:hover .header-box-hr{
   color: white;
   border-color: white !important;
 }
@@ -216,3 +216,29 @@ hr{
 .Icon:hover+em{
   color: rgb(33, 5, 160);
 }
+
+
+.full-pop{
+  max-width: 100%;
+  max-height: 0;
+  left: 0;
+  top: 10vh;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 10px gray;
+  position: absolute;
+  background: rgba(255,255,255,0.9);
+  z-index: 10000;
+  color: black;
+  overflow: hidden;
+  transition: all .5s ease;
+}
+
+.hr-black{
+  border-color: black;
+}
+
+.full-pop-show{
+  max-height: 30vh;
+  padding: 1rem;
+}
+
