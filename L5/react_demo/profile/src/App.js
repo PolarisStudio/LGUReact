@@ -6,6 +6,30 @@ var contactList = {
   address: "2001 Longxiang Road, Longgang District, Shenzhen",
 };
 
+var headerList = [
+  {
+    title: 'Education Experiences',
+    short: 'CUHK(SZ)',
+    long: 'XXX'
+  },
+  {
+    title: 'Programming Skills',
+    short: 'Python, JavaScript',
+    long: 'XXX'
+  },
+  {
+    title: 'Hobbies',
+    short: 'Sports, Miao Miao',
+    long: 'XXX'
+  },
+  {
+    title: 'Working Experiences',
+    short: 'Polaris Studio',
+    long: 'XXX'
+  },
+]
+
+
 class Portrait extends Component {
   render() {
     return (
@@ -16,7 +40,7 @@ class Portrait extends Component {
 
         </div>
         <div className='container-col'>
-          <em className='em-strong'>David</em>
+          <em className='em-strong'>小喵呜</em>
           <hr></hr>
           <em>CUHK(SZ)</em>
         </div>
@@ -26,11 +50,47 @@ class Portrait extends Component {
   }
 }
 
+class ContainerHeader extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      headerFocus: null
+    };
+  }
+  headerChangeFocus(newTitle){
+    this.setState({
+      headerFocus: newTitle
+    })
+    console.log(this.headerFocus)
+  }
+  render(){
+    return (
+      <div className="container-row full-height">
+        {
+          headerList.map((item)=>
+          <div className={"container-col auto-height header-box " + (this.state.headerFocus===item.title?"header-box-focus":"")} key={item.title} onClick={()=>{this.headerChangeFocus(item.title)}}>
+            <div>
+              {item.title}
+            </div>
+            <hr></hr>
+            <div>
+              {item.short}
+            </div>
+          </div>
+          )
+        }
+        
+        
+      </div>
+    )
+  }
+}
+
 class Header extends Component {
   render() {
     return (
       <div className="header">
-
+        <ContainerHeader></ContainerHeader>
         <Portrait></Portrait>
       </div>
     )
@@ -95,6 +155,7 @@ class App extends Component {
 }
 
 export default App;
+export {MailIcon, AddressIcon};
 
 
 // fetch(
