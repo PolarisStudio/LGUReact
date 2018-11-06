@@ -6,7 +6,7 @@ var contactList = {
   address: "2001 Longxiang Road, Longgang District, Shenzhen",
 };
 
-var headerList = [
+var contentList = [
   {
     title: 'Education Experiences',
     short: 'CUHK(SZ)',
@@ -35,25 +35,24 @@ class Portrait extends Component {
     return (
       <div className="portrait">
         <div>
-        <div>
-          <img className='portrait-img' src="https://www.ipolaris.club/media/img/8801111.jpg" alt="portrait"></img>
+          <div>
+            <img className='portrait-img' src="https://www.ipolaris.club/media/img/8801111.jpg" alt="portrait"></img>
 
-        </div>
-        <div className='container-col'>
-          <em className='em-strong'>小喵呜</em>
-          <hr></hr>
-          <em>CUHK(SZ)</em>
-        </div>
+          </div>
+          <div className='container-col'>
+            <em className='em-strong'>小喵呜</em>
+            <hr></hr>
+            <em>CUHK(SZ)</em>
+          </div>
         </div>
       </div>
     )
   }
 }
 
-class FullPop extends Component{
-  constructor(props){
+class FullPop extends Component {
+  constructor(props) {
     super(props);
-    console.log(props);
     this.state = {
       content: JSON.parse(props.content),
       show: false
@@ -61,14 +60,14 @@ class FullPop extends Component{
 
   }
 
-  render(){
-    setTimeout(()=>{
+  render() {
+    setTimeout(() => {
       this.setState({
         show: true
       })
     })
-    return(
-      <div className={'full-pop ' + (this.state.show?'full-pop-show':'')}>
+    return (
+      <div className={'full-pop ' + (this.state.show ? 'full-pop-show' : '')}>
         <div>
           {this.state.content.title}
         </div>
@@ -81,48 +80,51 @@ class FullPop extends Component{
   }
 }
 
-class ContainerHeader extends Component{
-  constructor(props){
+class ContainerHeader extends Component {
+  constructor(props) {
     super(props);
     this.state = {
       headerFocus: null
     };
   }
-  headerChangeFocus(newTitle){
+  headerChangeFocus(newTitle) {
     this.setState({
-      headerFocus: newTitle==this.state.headerFocus?null:newTitle
+      headerFocus: newTitle === this.state.headerFocus ? null : newTitle
     })
-    console.log(this.headerFocus)
   }
-  render(){
+  render() {
     return (
-        
+
       <div className="container-row full-height">
         {
-          headerList.map((item)=>
-          <div className={"container-col auto-height header-box " + (this.state.headerFocus===item.title?"header-box-focus":"")} key={item.title} onClick={()=>{this.headerChangeFocus(item.title)}}>
-            
+          contentList.map((item) =>
 
-            <div>
-              {item.title}
-            </div>
-            <hr className="header-box-hr"></hr>
-            <div>
-              {item.short}
-            </div>
-            <div style={{position: 'relative'}}>
-            {this.state.headerFocus===item.title &&
-              <FullPop content={JSON.stringify(item)}></FullPop>
-            }
+            <div className={"container-col auto-height header-box " + (this.state.headerFocus === item.title ? "header-box-focus" : "")} key={item.title} onMouseEnter={() => { this.headerChangeFocus(item.title) }} onMouseLeave={() => { this.headerChangeFocus(null) }}>
+              <a href={"#" + item.title}>
+
+                <div>
+                  {item.title}
+                </div>
+                <hr className="header-box-hr"></hr>
+                <div>
+                  {item.short}
+                </div>
+                <div style={{ position: 'relative' }}>
+                  {this.state.headerFocus === item.title &&
+                    <FullPop content={JSON.stringify(item)}></FullPop>
+                  }
+
+                </div>
+              </a>
 
             </div>
-          </div>
-          
+
+
 
           )
         }
-        </div>
-        
+      </div>
+
     )
   }
 }
@@ -138,8 +140,8 @@ class Header extends Component {
   }
 }
 
-class MailIcon extends Component{
-  render(){
+class MailIcon extends Component {
+  render() {
     return (
       <div className="Icon">
         &#xe623;
@@ -148,8 +150,8 @@ class MailIcon extends Component{
   }
 }
 
-class AddressIcon extends Component{
-  render(){
+class AddressIcon extends Component {
+  render() {
     return (
       <div className="Icon">
         &#xe61d;
@@ -159,44 +161,79 @@ class AddressIcon extends Component{
 }
 
 
-class Middle extends Component{
-  render(){
+class Middle extends Component {
+  render() {
     return (
       <div className="Middle">
-        <a href={"mailto:"+contactList.email}>
-        <div className='container-col'>
-          <MailIcon></MailIcon>
-          <em>{contactList.email}</em>
-          
-        </div>
+        <a href={"mailto:" + contactList.email}>
+          <div className='container-col'>
+            <MailIcon></MailIcon>
+            <em>{contactList.email}</em>
+
+          </div>
         </a>
 
         <div className='container-col'>
           <AddressIcon></AddressIcon>
           <em>{contactList.address}</em>
-          
+
         </div>
       </div>
     )
   }
 }
+
+class MainComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+
+  }
+  render() {
+    return (
+      <div className='margin-bottom' id={this.props.title}>
+        <div className='container-row container-left align-end underline '>
+          <div className='main-head'>
+            {this.props.title}
+
+          </div>
+          <div className='main-subhead'>{this.props.short}</div>
+        </div>
+
+        <p className='main-p'>
+          {this.props.long}
+        </p>
+      </div>
+    )
+  }
+}
+
 class App extends Component {
   render() {
     return (
       <div>
-      <Header>
+        <Header>
 
-      </Header>
-      <Middle>
+        </Header>
+        <Middle>
 
-      </Middle>
+        </Middle>
+
+        <main style={{ position: 'absolute', top: '100vh' }}>
+          {contentList.map((item) =>
+
+            <MainComponent title={item.title} short={item.short} long={item.long}>
+            </MainComponent>
+
+          )}
+        </main>
       </div>
     );
   }
 }
 
 export default App;
-export {MailIcon, AddressIcon};
+export { MailIcon, AddressIcon };
 
 
 // fetch(

@@ -55,6 +55,11 @@ hr{
   width: 100%;
 }
 
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
 .em-strong{
   font-size: 1.5rem;
 }
@@ -166,6 +171,26 @@ hr{
   align-items: center;
 }
 
+.container-left{
+  justify-content: flex-start;
+  width: fit-content;
+}
+
+.align-start{
+  align-items: flex-start;
+}
+.align-end{
+  align-items: flex-end;
+}
+
+.underline{
+  border-bottom: gray 1px solid;
+}
+
+.margin-bottom{
+  margin-bottom: 2rem;
+}
+
 
 .Middle{
   width:100%;
@@ -177,7 +202,7 @@ hr{
   align-items: center;
 }
 
-.Middle .container-col, a{
+.Middle .container-col, .Middle a{
   width: 36vw;
   height: 100%;
   display: flex;
@@ -233,6 +258,12 @@ hr{
   transition: all .5s ease;
 }
 
+.full-pop p{
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
 .hr-black{
   border-color: black;
 }
@@ -242,3 +273,20 @@ hr{
   padding: 1rem;
 }
 
+main{
+  margin: 0 2rem;
+  width: calc(100% - 4rem);
+}
+.main-head{
+  font-size: 2rem;
+  font-weight: 600;
+  margin-right: 2rem;
+}
+
+.main-subhead{
+  font-style: italic;
+}
+
+.main-p{
+  margin-left: 1rem;
+}
