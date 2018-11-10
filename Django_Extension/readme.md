@@ -210,7 +210,7 @@ def add(request):
 
 React有多强我在这里就不多说了，在这里我以React配置为例讲解一下静态文件在Django中该如何设置。
 
-首先，我们对React项目执行`npm run build`会得到一个build的文件夹
+首先，我们对React项目执行`npm run build`会得到一个build的文件夹，你们可以直接复制我这里的reactdemo中的build内容。
 
 1. 我们在myproject根目录中新建一个static文件夹，把static中的文件复制过去
 2. 我们在myproject根目录中新建一个templates文件夹，把index.html复制过去
