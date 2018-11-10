@@ -11,8 +11,7 @@
 
 利用 pip install 安装以下的package：
 
-1. pip install requests
-2. pip install django
+1. pip install django
 
 ## 3. 创建一个Django Project
 
@@ -205,4 +204,53 @@ def add(request):
 我们再次尝试访问`http://127.0.0.1:8000/add`，这时候，浏览器就会返回Invalid Input了！
 
 至此，我们已经实现了一个简单的计算器Api!
+
+
+## 5. Django + React
+
+React有多强我在这里就不多说了，在这里我以React配置为例讲解一下静态文件在Django中该如何设置。
+
+首先，我们对React项目执行`npm run build`会得到一个build的文件夹
+
+1. 我们在myproject根目录中新建一个static文件夹，把static中的文件复制过去
+2. 我们在myproject根目录中新建一个templates文件夹，把index.html复制过去
+3. 修改views.py
+
+```
+from django.shortcuts import render, render_to_response
+
+...
+
+def index(request):
+    return render_to_response('index.html')
+    
+```
+
+4. 在urls.py中`from myapp.views import hello, add, index`，并在urlpatterns中添加`path('', index)`
+5. 打开settings.py，在最后添加
+```
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+```
+以及修改TEMPLATES中的DIRS：
+```
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        ...
+```
+
+6. 此外，对于favicon.ico，manifest.json等文件，也可以复制到static中，但是需要修改index.html，在它的路径前面添加/static/
+
+7. runserver并打开浏览器，我们可以看到根目录下面是我们的react网页了！至此，我们成功部署了静态文件以及html文件。
+
+8. 其实更方便的部署方式是在服务器中分开部署React和Django，Django只需要提供Api访问数据库等，React只负责前端的事情！
+
+## 6. 其他Tips
+
+1. settings.py中的ALLOW_HOSTS可以配置允许访问的IP，如果写'*'， 则全部IP均可访问。
+2. 使用POST的时候，把 `'django.middleware.csrf.CsrfViewMiddleware',`注释掉。
+
 
