@@ -10,22 +10,27 @@ var contentList = [
   {
     title: 'Education Experiences',
     short: 'CUHK(SZ)',
-    long: 'XXX'
+    long: `The Chinese University of Hong Kong, Shenzhen, 2017-2020
+React Course in Polaris Studio, 2018.09-2018.12`
   },
   {
     title: 'Programming Skills',
     short: 'Python, JavaScript',
-    long: 'XXX'
+    long: `Fluent with Python
+Very familiar with JavaScript
+As well as HTML & CSS`
   },
   {
     title: 'Hobbies',
-    short: 'Sports, Miao Miao',
-    long: 'XXX'
+    short: 'Sports, Programming',
+    long: `Doing sports
+Programming during most of my weekends`
   },
   {
     title: 'Working Experiences',
     short: 'Polaris Studio',
-    long: 'XXX'
+    long: `Polaris Studio is my dream team!
+    `
   },
 ]
 
@@ -40,7 +45,7 @@ class Portrait extends Component {
 
           </div>
           <div className='container-col'>
-            <em className='em-strong'>小喵呜</em>
+            <em className='em-strong'>David</em>
             <hr></hr>
             <em>CUHK(SZ)</em>
           </div>
@@ -73,7 +78,7 @@ class FullPop extends Component {
         </div>
         <hr></hr>
         <p>
-          {this.state.content.long}
+          {this.state.content.short}
         </p>
       </div>
     )
@@ -99,25 +104,27 @@ class ContainerHeader extends Component {
         {
           contentList.map((item) =>
 
-            <div className={"container-col auto-height header-box " + (this.state.headerFocus === item.title ? "header-box-focus" : "")} key={item.title} onMouseEnter={() => { this.headerChangeFocus(item.title) }} onMouseLeave={() => { this.headerChangeFocus(null) }}>
-              <a href={"#" + item.title}>
+            <a key={item.title} className={'container-col header-box auto-height  ' + (this.state.headerFocus === item.title ? "header-box-focus" : "")} href={"#" + item.title} onMouseEnter={() => { this.headerChangeFocus(item.title) }} onMouseLeave={() => { this.headerChangeFocus(null) }}>
+
+              <div >
 
                 <div>
                   {item.title}
                 </div>
-                <hr className="header-box-hr"></hr>
-                <div>
+                {/* <hr className="header-box-hr"></hr> */}
+                {/* <div>
                   {item.short}
-                </div>
+                </div> */}
                 <div style={{ position: 'relative' }}>
                   {this.state.headerFocus === item.title &&
                     <FullPop content={JSON.stringify(item)}></FullPop>
                   }
 
                 </div>
-              </a>
 
-            </div>
+              </div>
+            </a>
+
 
 
 
@@ -164,20 +171,26 @@ class AddressIcon extends Component {
 class Middle extends Component {
   render() {
     return (
-      <div className="Middle">
-        <a href={"mailto:" + contactList.email}>
+      <div>
+        <div className="Middle">
+          <a href={"mailto:" + contactList.email}>
+            <div className='container-col'>
+              <MailIcon></MailIcon>
+              <em>{contactList.email}</em>
+
+            </div>
+          </a>
+
           <div className='container-col'>
-            <MailIcon></MailIcon>
-            <em>{contactList.email}</em>
+            <AddressIcon></AddressIcon>
+            <em>{contactList.address}</em>
 
           </div>
-        </a>
 
-        <div className='container-col'>
-          <AddressIcon></AddressIcon>
-          <em>{contactList.address}</em>
 
         </div>
+        <hr style={{width: '95%', borderWidth: '1px' , position: 'absolute', top: '98vh', left:'2.5%'}}></hr>
+
       </div>
     )
   }
