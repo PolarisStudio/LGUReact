@@ -55,7 +55,7 @@ class Portrait extends Component {
   }
 }
 
-class FullPop extends Component {
+class Pop extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -108,7 +108,7 @@ class ContainerHeader extends Component {
 
               <div >
 
-                <div>
+                <div style={{fontSize : '1.5rem'}}>
                   {item.title}
                 </div>
                 {/* <hr className="header-box-hr"></hr> */}
@@ -117,7 +117,7 @@ class ContainerHeader extends Component {
                 </div> */}
                 <div style={{ position: 'relative' }}>
                   {this.state.headerFocus === item.title &&
-                    <FullPop content={JSON.stringify(item)}></FullPop>
+                    <Pop content={JSON.stringify(item)}></Pop>
                   }
 
                 </div>
