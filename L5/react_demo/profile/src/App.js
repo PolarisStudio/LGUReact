@@ -189,7 +189,7 @@ class Middle extends Component {
 
 
         </div>
-        <hr style={{width: '95%', borderWidth: '1px' , position: 'absolute', top: '98vh', left:'2.5%'}}></hr>
+        <hr style={{width: '95%', borderWidth: '1px' , position: 'absolute', top: '98vh', left:'2.5 %'}}></hr>
 
       </div>
     )
